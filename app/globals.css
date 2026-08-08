@@ -1,0 +1,102 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* Brand-specific tokens (from the old IdunZ site) */
+  --color-header: var(--header);
+  --color-header-foreground: var(--header-foreground);
+  --color-brand-red: var(--brand-red);
+  --color-active: var(--active);
+
+  --font-sans: var(--font-body);
+  --font-body: var(--font-body);
+  --font-heading: var(--font-heading);
+  --font-nav: var(--font-nav);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+:root {
+  color-scheme: dark;
+
+  /* Core palette */
+  --background: #333333;
+  --foreground: #f4f4f4;
+
+  --card: #414141;
+  --card-foreground: #f4f4f4;
+
+  --popover: #414141;
+  --popover-foreground: #f4f4f4;
+
+  --primary: #ff2222;
+  --primary-foreground: #ffffff;
+
+  --secondary: #708090;
+  --secondary-foreground: #ffffff;
+
+  --muted: #4a4a4a;
+  --muted-foreground: #b6bcc4;
+
+  --accent: #a00000;
+  --accent-foreground: #ffffff;
+
+  --destructive: #ff2222;
+  --destructive-foreground: #ffffff;
+
+  --border: rgba(255, 255, 255, 0.12);
+  --input: rgba(255, 255, 255, 0.16);
+  --ring: #ff2222;
+
+  /* Brand tokens */
+  --header: #708090;
+  --header-foreground: #ffffff;
+  --brand-red: #ff2222;
+  --active: #a00000;
+
+  --radius: 0.5rem;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    @apply bg-background;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  /* subtle textured backdrop for the retro-tech feel */
+  body {
+    background-image:
+      radial-gradient(circle at 15% 15%, rgba(255, 34, 34, 0.06), transparent 40%),
+      radial-gradient(circle at 85% 85%, rgba(112, 128, 144, 0.1), transparent 45%);
+    background-attachment: fixed;
+  }
+}
